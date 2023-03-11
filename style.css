@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+:root {
+  --cyan-strong: hsl(172, 67%, 45%);
+  --cyan-dark: hsl(183, 100%, 15%);
+  --button: hsl(183, 100%, 20%);
+  --cyan-light-gray: hsl(186, 14%, 43%);
+  --cyan-regular: hsl(184, 14%, 56%);
+  --cyan-light-grayish: hsl(185, 41%, 84%);
+  --cyan-lighter-grayish: hsl(189, 41%, 97%);
+  --white: rgba(255, 255, 255);
+  --ff: "Space Mono", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button,
+input {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: 0;
+  width: 100%;
+}
+
+/* removing the arrow on input type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: var(--ff);
+  min-height: 100vh;
+  background-color: var(--cyan-light-grayish);
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 5rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.container .title {
+  text-align: center;
+  color: var(--cyan-light-gray);
+  letter-spacing: 5px;
+  font-weight: 200;
+}
+.box {
+  background-color: var(--cyan-lighter-grayish);
+  border-radius: 30px;
+  max-width: 1000px;
+  padding: 1.5rem;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 2rem;
+}
+.left-col > p {
+  font-family: var(--ff);
+  color: var(--cyan-light-gray);
+  margin-block: 1rem;
+}
+.bill,
+.people__con {
+  background-color: var(--cyan-light-grayish);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dollar__sign {
+  height: 25px;
+}
+.bill > .total-bill,
+.people__con > input {
+  font-size: 2rem;
+  text-align: right;
+  color: var(--cyan-dark);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1rem;
+}
+.grid span {
+  background-color: var(--cyan-dark);
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.grid span:hover,
+.grid span:focus {
+  background-color: var(--cyan-strong);
+  color: var(--cyan-dark);
+}
+.grid > input {
+  background-color: var(--cyan-light-grayish);
+  text-align: center;
+  border-radius: 0.3rem;
+  color: var(--cyan-dark);
+}
+.people__con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cyan-light-grayish);
+}
+
+/* right column */
+.right-col {
+  background-color: var(--cyan-dark);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.tip__amount p,
+.total__person p {
+  color: var(--white);
+}
+.tip__amount span,
+.total__person span {
+  color: var(--cyan-light-gray);
+}
+.tip__amount,
+.total__person {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+.tip__amount > .tip,
+.total__person > .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tip > span,
+.total > span {
+  font-size: 2.5rem;
+  color: var(--cyan-strong);
+}
+.reset {
+  background-color: var(--button);
+  border-radius: 0.3rem;
+  padding: 0.5rem 0;
+  color: var(--cyan-dark);
+  cursor: pointer;
+}
+
+/* reset active target on javascript */
+.reset__active {
+  background-color: var(--cyan-strong);
+}
+
+.active__tip {
+  background-color: var(--cyan-strong) !important;
+}
+.reset:focus,
+.reset:hover {
+  background-color: var(--cyan-light-grayish);
+}
+@media (min-width: 780px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  .box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .right-col {
+    align-items: flex-start;
+    padding: 2rem;
+  }
+  .left-col {
+    padding: 1rem;
+  }
+  .reset {
+    height: 70px;
+  }
+}

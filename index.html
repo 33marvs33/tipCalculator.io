@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+</head>
+<body>
+    <div class="container">
+      <h1 class="title">SPLI<br>TTER</h1>
+      <form class="box">
+        <div class="left-col">
+          <p>Bill</p>
+          <div class="bill">
+            <img src="images/icon-dollar.svg" alt="dollar-sign" class="dollar__sign">
+            <input type="text" maxlength="8" onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46' placeholder="0" class="total-bill" >
+          </div>
+          <p>Select Tip %</p>
+          <div class="grid">
+            <span class="percent" id="0.05">5%</span>
+            <span class=percent id="0.1">10%</span>
+            <span class="percent" id="0.15">15%</span>
+            <span class="percent" id="0.25">25%</span>
+            <span class="percent" id="0.50">50%</span>
+            <input type="text" placeholder="Custom" class="custom">
+          </div>
+          <p>Number of People</p>
+          <div class="people__con">
+             <img src="images/icon-person.svg" alt="dollar-sign" class="dollar__sign">
+          <input type="text" maxlength="8" onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46' placeholder="1" class="people">
+          </div>
+         
+        </div>
+        <div class="right-col">
+          <div class="tip__amount">
+            <div class="details">
+              <p>Tip Amount</p>
+            <span>/ person</span>
+            </div>
+            
+            <div class="tip">
+              <span>$</span>
+              <span id="tip">00.00</span>
+            </div>
+          </div>
+          <div class="total__person">
+            <div class="details">
+              <p>Total</p>
+            <span>/ person</span>
+            </div>
+            
+            <div class="total">
+              <span>$</span>
+              <span id="total">00.00</span>
+          </div>
+        </div>
+
+        <button class="reset">RESET</button>
+      </form>
+    </div>
+ 
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Marvin</a>.
+  </footer>
+</body>
+</html>
